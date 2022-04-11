@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" 
+    crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <style>
+        .row{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 20px;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body >
+
+    <div class="container"  id="form">
+        <h1 class="text-center my-2">CV</h1>
+        <p class="text-center">Please fill the form below to generate CV</p>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Personal Information</h3>
+                <div class="form-group mt-2">
+                    <label for="nameField">Name</label>
+                    <input type="text" id="nameField" class="form-control" placeholder="Enter your name">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="careerField">Career</label>
+                    <input type="text" id="careerField" class="form-control" placeholder="Enter your career">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="contactField">Phone</label>
+                    <input type="number" id="contactField" class="form-control" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="emailField">Email</label>
+                    <input type="email" id="emailField" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="addressField">Address</label>
+                    <textarea id="addressField" class="form-control" placeholder="Enter your address"></textarea>
+                </div>
+
+                <!-- Code for Social Links -->
+                 <p class="my-3">Important Links</p>
+                <div class="form-group">
+                    <label for="fbField">Facebook</label>
+                    <input type="text" id="fbField" class="form-control" placeholder="Enter link">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="twitterField">Twitter</label>
+                    <input type="text" id="twitterField" class="form-control" placeholder="Enter link">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="instaField">Instagram</label>
+                    <input type="text" id="instaField" class="form-control" placeholder="Enter link">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="linkedField">LinkedIn</label>
+                    <input type="text" id="linkedField" class="form-control" placeholder="Enter link">
+                </div> 
+                <div class="form-group mt-3">
+                    <label for="imgField">Profile Pic</label>
+                    <input type="file" id="imgField" class="form-control" >
+                </div> 
+            </div>
+
+            <div class="col-md-6">
+                <h3>Details</h3>
+
+                <div class="form-group mt-2">
+                    <label for="objectiveField">Objective</label>
+                    <textarea id="objectiveField" class="form-control" rows="3"  placeholder="Enter your objective"></textarea>
+                </div>
+
+                <div class="form-group mt-2" id="we">
+                    <label for="weField">Experiences</label>
+                    <textarea id="weField" class="form-control weField" rows="3" 
+                    placeholder="Enter your experiences"></textarea>
+
+                    <!-- New TextArea will appear here -->
+
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button onclick="NewWEField()" class="btn btn-dark btn-sm">ADD MORE</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="ed">
+                    <label for="education">Education</label>
+                    <textarea id="education" class="form-control eqField" rows="3" placeholder="Enter your qualification"></textarea>
+                    
+                    <!-- New TextArea will appear here -->
+
+                    <div class="container text-center mt-2" id="aqAddButton">
+                        <button onclick="NewEDField()" class="btn btn-dark btn-sm">ADD MORE</button>
+                    </div>
+                </div>
+                <div class="form-group mt-2" id="skills">
+                    <label for="skills">Skills</label>
+                    <textarea id="skills" class="form-control skillsField" rows="1" placeholder="Enter your Skills"></textarea>
+                    
+                    <!-- New TextArea will appear here -->
+
+                    <div class="container text-center mt-2" id="skAddButton">
+                        <button onclick="NewSkillsField()" class="btn btn-dark btn-sm">ADD MORE</button>
+                    </div>
+                </div>
+                <div class="form-group mt-2" id="awards">
+                    <label for="awards">Awards</label>
+                    <textarea id="awards" class="form-control awardsField" rows="1" placeholder="Enter your Awards"></textarea>
+                    
+                    <!-- New TextArea will appear here -->
+
+                    <div class="container text-center mt-2" id="awAddButton">
+                        <button onclick="NewAwardsField()" class="btn btn-dark btn-sm">ADD MORE</button>
+                    </div>
+                </div>
+                <div class="form-group mt-2" id="references">
+                    <label for="references">References</label>
+                    <textarea name="editor1" id="references" class="form-control referencesField" rows="1" placeholder="Enter your references"></textarea>
+                    
+                    <script>
+                     var editor1 =  CKEDITOR.replace( 'editor1' );
+                    </script>
+
+                    <div class="container  text-center mt-2" id="rfAddButton">
+                        <button onclick="NewReferencesField()" class="btn btn-dark btn-sm">ADD</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+        <div class="container text-center my-3">
+            <button onclick="generateCV()" id="BtnGenerateCV" class="btn btn-dark" >Submit</button>
+        </div>
+        <!-- // template code -->
+        <main class="main-content" id="cv-template">
+            <section class="left-section">
+                <div class="left-content">
+                    <div class="profile">
+                        <div class="image">
+                            <img src="women avator.jpg" alt="" class=" myimg" id="imgT">
+                        </div>
+                        <h2 id="nameT" class="name">Your Name</h2>
+                        <p id="careerT" class="career">Software Engineer</p>
+                    </div>
+                    <div class="contact-info">
+                        <h3 class="main-title">Contact Info</h3>
+                        <ul>
+                            <li id="contactT">
+                                <i class="fa fa-phone"></i>
+                                07661892982
+                            </li>
+                            <li id="emailT">
+                                <i class="fa fa-fax"></i>
+                                loremipsum@gmail.com
+                            </li>
+                            <li id="fbT">
+                                <i class="fa fa-facebook"></i>
+                                www.facebook.com/lorem
+                            </li>
+                            <li id="twitterT">
+                                <i class="fa fa-twitter"></i>
+                                @loremipsum
+                            </li>
+                            <li id="instaT">
+                                <i class="fa fa-instagram"></i>
+                                @loremipsum
+                            </li>
+                            <li id="linkedT">
+                                <i class="fa fa-linkedin"></i>
+                                @loremipsum
+                            </li>
+                            <li id="addressT">
+                                <i class="fa fa-map-marker"></i>
+                                37 Pramount St, London
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="skills-section">
+                        <h3 class="main-title">Skills</h3>
+                        <ul id="skillsT" class="skill-title">
+                            <li class="skill-title">Lorem ipsum  </li>
+                            <li class="skill-title">Lorem ipsum </li>
+                            <li class="skill-title">Lorem ipsum  </li>
+                            <li class="skill-title">Lorem ipsum  </li>
+                        </ul>
+                    </div>
+                    <div class="references-section">
+                        <h3 class="main-title">References</h3>
+                        <div id="referenceT" class="referee">
+                            <h6 class="sub-title">Michael Bowen</h6>
+                            <p class="sub-para">Product Manager</p>
+                            <ul>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    07661892982
+                                </li>
+                                <li>
+                                    <i class="fa fa-fax"></i>
+                                    loremipsum@gmail.com
+                                </li>
+                            </ul>
+                       </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class="right-section">
+                <div class="right-main-content">
+                    <section class="about sect">
+                        <h2 class="right-title">Objective</h2>
+                        <p  id="objectiveT" class="para">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam molestias facilis ullam dolorum, reprehenderit dolorem accusantium sit quo 
+                            dolore nostrum assumenda obcaecati animi commodi nobis labore exercitationem corporis esse eveniet optio laudantium molestiae maiores pariatur nisi cumque. 
+                            Distinctio et, totam, dicta autem nostrum doloribus ipsam vel rerum, molestiae soluta laboriosam. <br>
+                            <br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto iusto porro suscipit. 
+                            Nihil blanditiis cum voluptates odio recusandae deleniti, nulla repudiandae aliquam adipisci iusto reiciendis sequi labore quos ratione accusamus consectetur, 
+                            libero ex assumenda pariatur commodi animi nobis, dolore id.
+                        </p>
+                    </section>
+    
+                    <section class="experince sect">
+                        <h2 class="right-title">Experience</h2>
+                        <div id="weT" class="timeline">
+                            <ul>
+                                <li>Lorem ipsum dolor sit amet  </li>
+                                <li>Lorem ipsum dolor sit amet  </li>
+                                <li>Lorem ipsum dolor sit amet  </li>
+                            </ul>
+                        </div>
+                        
+                    </section>
+                    <section class="education sect">
+                        <h2 class="right-title">education</h2>
+                        <div id="educationT" class="timeline">
+                            <ul>
+                                <li>Lorem ipsum dolor sit amet  </li>
+                                <li>Lorem ipsum dolor sit amet  </li>
+                                <li>Lorem ipsum dolor sit amet  </li>
+                            </ul>
+                        </div>
+                        
+                    </section>
+                    <section class="awards sect">
+                        <h2 class="right-title">Awards</h2>
+                        <div id="awardsT" class="timeline">
+                            <ul>
+                                <li>Lorem ipsum dolor sit amet  </li>
+                                <li>Lorem ipsum dolor sit amet  </li>
+                                <li>Lorem ipsum dolor sit amet  </li>
+                            </ul>
+                        </div>
+
+                    </section>
+                </div>
+            </section>
+            <div>
+                <button onclick="printCV()" class="printCv" id="print" style="position: absolute;
+                 left: 45%;
+                margin: 10px ;">Print CV</button>
+                
+            </div>
+            <div>
+                <button class="printCv" id="send" style="position: absolute;
+                left: 55%;
+                margin: 10px ;"><a href="../indexEnd.html" style="text-decoration: none; color: white" >Send</a></button>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" 
+        crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+</body>
+</html>
